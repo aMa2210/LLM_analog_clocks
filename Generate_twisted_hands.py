@@ -83,36 +83,39 @@ def draw_clock(hours, minutes, seconds, save_path):
     plt.ylim(-1.05, 1.05)
 
     # Show the figure
-    # plt.show()
+    plt.show()
 
     # Save the image
-    plt.savefig(save_path, bbox_inches='tight', pad_inches=0.1)
-    plt.close(fig)
+    # plt.savefig(save_path, bbox_inches='tight', pad_inches=0.1)
+    # plt.close(fig)
 
 
-# draw_clock(10, 45, 30, "path")
+draw_clock(10, 45, 30, "path")
 
 
-folder_path = 'clock_twisted_hands'
-# Create dataset folder
-os.makedirs(folder_path, exist_ok=True)
+# folder_path = 'clock_twisted_hands_dataset'
+# # Create dataset folder
+# os.makedirs(folder_path, exist_ok=True)
+#
+#
+# file_path = 'train-00000-of-00004.parquet'
+# df = pd.read_parquet(file_path)
+# df = df.head(150)
+#
+# for index, row in df.iterrows():
+#     a = row['answer']
+#     hour_24, minute, second = a.split(":")
+#     hour_24 = int(hour_24)
+#     minute = int(minute)
+#     second = int(second)
+#     hour_12 = hour_24 % 12
+#     hour_12 = 12 if hour_12 == 0 else hour_12  # convert 0 hour to 12
+#     filename = f"{hour_12:02d}_{minute:02d}_{second:02d}.png"
+#     path = os.path.join(folder_path, filename)
+#     draw_clock(hour_24, minute, second, path)
 
 
-file_path = 'train-00000-of-00004.parquet'
-df = pd.read_parquet(file_path)
-df = df.head(150)
 
-for index, row in df.iterrows():
-    a = row['answer']
-    hour_24, minute, second = a.split(":")
-    hour_24 = int(hour_24)
-    minute = int(minute)
-    second = int(second)
-    hour_12 = hour_24 % 12
-    hour_12 = 12 if hour_12 == 0 else hour_12  # convert 0 hour to 12
-    filename = f"{hour_12:02d}_{minute:02d}_{second:02d}.png"
-    path = os.path.join(folder_path, filename)
-    draw_clock(hour_24, minute, second, path)
 
 #
 # # Generate images from 12_00_00.png to 11_59_59.png (12-hour format)

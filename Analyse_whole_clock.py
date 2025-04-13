@@ -3,7 +3,8 @@ import matplotlib.pyplot as plt
 from sklearn.metrics import mean_absolute_error
 
 filenames = ['twisted_hands.xlsx']
-filenames = ['whole_clock_previous.xlsx']
+filenames = ['results_distorted_circle/distorted_circle.xlsx']
+filenames = ['distorted_circle_FT.xlsx']
 
 
 def time_to_seconds(time_obj):
